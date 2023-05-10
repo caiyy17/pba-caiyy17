@@ -42,11 +42,11 @@ Run the program with different numbers of the particles (5k, 10k, and 20k).
 The number of the particle can be set at `line #189`  in [main.cpp](main.cpp).
 Record the computation time by filling the table below.     
 
-| #particle | time |
-| --- | --- |
-| 5000 | ? |
-| 10000 | ? |
-| 20000 | ? |
+| #particle | time    |
+| --- |---------|
+| 5000 | 18367ms |
+| 10000 | 73040ms |
+| 20000 | 285151ms |
 
 
 Take a screenshot image (it should look like image at the top) after 200 steps for the 20k particles. 
@@ -77,14 +77,16 @@ Record the computation time by filling the table below.
 
 | #particle | time |
 | --- | --- |
-| 5000 | ? |
-| 10000 | ? |
-| 20000 | ? |
+| 5000 | 3018ms |
+| 10000 | 5524ms |
+| 20000 | 13447ms |
 
 With the simulation with 20k particles, run the program for 200 steps. 
 Then save the screenshot image, overwriting `task03/problem2.png`.
 
 ![problem2](problem2.png)
+
+I also tried to use prefix sum to accelerate the computation, but the performance was quite similar to the original code. Generating the acceleration structure do not take much time (less than 1% of the total time). When setting the particle number to 200000 and comment out all the computation, the prefix sum method takes 103ms (9ms for 20000) to generate the acceleration structure, while the original code takes 1261ms (125ms for 20000).
 
 
 ## After Doing the Assignment
